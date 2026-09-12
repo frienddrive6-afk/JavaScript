@@ -1,55 +1,34 @@
 // Пример 1
-// let cartCount = 0; 
-// let isLogIn = false; 
+let ageInput = prompt("Введите ваш возраст:");
+let age = Number(ageInput);
+let hasPass = confirm("У вас есть VIP-пропуск?");
 
-// if (!isLogIn) {
-//     console.log("Пожалуйста, войдите в аккаунт для сохранения корзины.");
-// }
-
-// if (cartCount > 0) {
-//     console.log("Кнопка 'Оформить заказ' активна.");
-// } else if (cartCount === 0) { 
-//     console.log("Корзина пуста. Добавьте товары.");
-// }
-
+if ((age >= 18 && hasPass) || age >= 21) {
+    alert("Добро пожаловать в клуб!");
+} else if (!hasPass) {
+    alert("Вход воспрещен: нужен VIP-пропуск или возраст от 21 года.");
+} else {
+    alert("Вход воспрещен: вам нет 18 лет.");
+}
 
 // Пример 2
-// let userAgeInput = "18"; 
-// let promoCode = "";    
+let totalAmount = Number(prompt("Введите сумму покупки:"));
+let isMember = confirm("У вас есть карта постоянного клиента?");
 
-// if (userAgeInput == 18) {
-//     console.log("Доступ к фильмам 18+ открыт.");
-// }
-
-// if (userAgeInput === 18) {
-//     console.log("Типы совпали точно.");
-// } else {
-//     console.log("Ошибка: Система ожидала число, а получила строку!");
-// }
-
-// if (promoCode === "") {
-//     console.log("Промокод не применен, цена стандартная.");
-// }
-
-
+if (totalAmount >= 1000 || (totalAmount >= 500 && isMember)) {
+    alert("Поздравляем! Вы получаете скидку 15%.");
+} else {
+    alert("Скидка не применена. Добавьте товаров или предъявите карту.");
+}
 
 // Пример 3
+let login = prompt("Придумайте логин:");
+let pass = prompt("Придумайте пароль:");
 
-let username = "";
-let password = "Qwerty123";
-let confirmPassword =  "Qwerty1234";
-
-let selectedInterests = "\"Программирование\", \"Дизайн\"";
-
-
-if (username != "") {
-    console.log("Ошибка: Имя пользователя не может быть пустым!");
-}
-
-if (password !== confirmPassword) {
-    console.log("Ошибка: Пароли не совпадают!");
-}
-
-if (selectedInterests.length !== 0) {
-    console.log(`Выбрано интересов: ${selectedInterests.split(",").length}. Подбираем рекомендации...`);
+if (!login || !pass) {
+    alert("Ошибка: Логин и пароль не могут быть пустыми!");
+} else if (login === "admin" || pass.length < 6) {
+    alert("Ошибка: Имя 'admin' занято или пароль слишком короткий (нужно от 6 символов).");
+} else {
+    alert(`Регистрация успешна! Добро пожаловать, ${login}.`);
 }

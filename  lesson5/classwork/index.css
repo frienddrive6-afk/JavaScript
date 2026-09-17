@@ -1,0 +1,64 @@
+body
+{
+    margin: 0;
+}
+
+.container 
+{
+    max-width: 1256px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.menu
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 0;
+}
+
+.menu__list
+{
+    display: flex;
+    list-style: none;
+    gap: 50px;
+    margin: 0;
+    padding: 0;
+}
+
+.menu__list-item a
+{
+    font-size: 16px;
+    color: #18191F;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.menu__buttons-left
+{
+    color:#4CAF4F;
+    height: 40px;
+    padding: 0 20px;
+    border: 0;
+    background-color: transparent;
+}
+
+.menu__buttons-right
+{
+    height: 40px;
+    border: 0;
+    padding: 0 20px;
+    background-color: #4CAF4F;
+    border-radius: 6px;
+    color: white;
+}
+
+.menu__buttons
+{
+    display: flex;
+    gap: 14px;
+}
+
+
+

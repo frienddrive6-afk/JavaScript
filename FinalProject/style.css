@@ -1,12 +1,12 @@
-body
-{
+body {
     margin: 0;
     padding: 0;
     background-color: #F7F6F4;
+    color: #00373E;
+    font-family: 'Bricolage Grotesque', sans-serif;
 }
 
-h1,h2,h3,h4,h5,h6,ul,ol,li,p
-{
+h1, h2, h3, h4, h5, h6, ul, ol, li, p {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -14,15 +14,58 @@ h1,h2,h3,h4,h5,h6,ul,ol,li,p
 }
 
 a, a:visited {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
-.container
-{
+.container {
     width: 1240px;
     margin: 0 auto;
 }
+
+/*  ОБОПЩЕННЫЕ КЛАССЫ */
+
+.section-label {
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 500;
+}
+
+.section-title {
+    font-size: 52px;
+    font-weight: 600;
+}
+
+.section-description {
+    font-size: 22px;
+    font-weight: 400;
+    max-width: 476px;
+}
+
+.btn {
+    height: 54px;
+    border-radius: 27px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #00373E;
+    color: white;
+    border: none;
+    font-weight: 600;
+}
+
+.btn-secondary {
+    width: 192px;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 35px;
+    margin-left: 60px;
+}
+
+/* ===================================================
+   Header
+   =================================================== */
 
 header {
     position: fixed;
@@ -36,78 +79,61 @@ header {
 }
 
 .header-menu {
-    padding-top: 25px; 
-    padding-bottom: 25px;
+    padding: 25px 0;
     display: flex;
     justify-content: space-between;
     width: 100%;
 }
 
-.header-element ul
-{
+.header-element ul {
     display: flex;
     gap: 70px;
 }
 
-.header-element ul li
-{
+.header-element ul li {
     font-size: 18px;
     line-height: 22px;
     font-weight: 400;
-    color: #00373E;
-    font-family: 'Bricolage Grotesque', sans-serif;
 }
 
-.hero 
-{
+/* ===================================================
+   Hero
+   =================================================== */
+
+.hero {
     margin-top: 161px;
     height: 668px;
     background-color: #F9E6D0;
     border-radius: 70px;
     text-align: center;
     position: relative;
-
     overflow: hidden;
 }
 
-.hero h1
-{
+.hero h1 {
     padding-top: 170px;
     font-size: 70px;
     max-width: 640px;
     font-weight: 700;
-    color: #00373E;
     margin: 0 auto;
 }
 
-.hero p
-{
+.hero p {
     padding-top: 15px;
     font-size: 24px;
     max-width: 564px;
     font-weight: 400;
-    color: #00373E;
-    font-family: 'Bricolage Grotesque', sans-serif;
     margin: 0 auto;
 }
 
-.hero button
-{
+.hero button {
     margin: 45px auto;
-    background-color: #00373E;
-    color: white;
     width: 195px;
-    height: 54px;
-    border-radius: 27px;
     font-size: 15px;
     line-height: 20px;
-    font-weight: 600;
-    font-family: 'Bricolage Grotesque', sans-serif;
-    border: none;
 }
 
-.hero-image
-{
+.hero-image {
     position: absolute;
     top: 0;
     left: 0;
@@ -119,8 +145,11 @@ header {
     pointer-events: none;  
 }
 
-.about
-{
+/* ===================================================
+   About
+   =================================================== */
+
+.about {
     display: flex;
     justify-content: space-between;
     max-width: 1140px;
@@ -128,51 +157,26 @@ header {
     height: 564px;
 }
 
-.about-element-p1
-{
-    font-size: 14px;
-    line-height: 17px;
-    font-weight: 500;
-    color: #00373E;
-    font-family: 'Bricolage Grotesque', sans-serif;
+.about-element-p1 {
     margin-top: 47px;
 }
-.about-element h2
-{
+
+.about-element h2 {
     margin-top: 37px;
-    font-size: 52px;
     max-width: 440px;
-    font-weight: 600;
-    color: #00373E;
-    font-family: 'Bricolage Grotesque', sans-serif;
 }
 
-.about-element-p2
-{
-    font-size: 22px;
-    font-weight: 400;
-    color: #00373E;
-    font-family: 'Bricolage Grotesque', sans-serif;
-    max-width: 476px;
+.about-element-p2 {
     margin-top: 37px;
 }
 
-.about-element button
-{
-   margin-top: 37px;
-   background-color: #00373E;
-   color: white;
-   width: 243px;
-   height: 54px;
-   border-radius: 27px;
-   font-size: 20px;
-   border: none;
-   font-weight: 600;
-   font-family: 'Bricolage Grotesque', sans-serif;
+.about-element button {
+    margin-top: 37px;
+    width: 243px;
+    font-size: 20px;
 }
 
-.cry-wooman
-{
+.cry-wooman {
     background-color: #00373E;
     width: 550px;
     height: 564px;
@@ -180,11 +184,153 @@ header {
     justify-content: center;
     align-items: center;
     border-radius: 60px;
-
 }
 
-.cry-wooman img
-{
+.cry-wooman img {
     width: 350px;
     height: 416px;
 }
+
+/* ===================================================
+   Services
+   =================================================== */
+
+.services {
+    margin-top: 60px;
+}
+
+.services-top {
+    text-align: center;
+}
+
+.services-top h2 {
+    max-width: 415px;
+    margin: 20px auto 0 auto; 
+}
+
+.services-top-p2 {
+    margin: 20px auto 0 auto;
+}
+
+.services-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+    gap: 20px;
+}
+
+.services-bottom-element {
+    width: 600px;
+    height: 455px;
+}
+
+.services-bottom-element h2 {
+    margin-top: 75px;
+    margin-left: 60px;
+    font-size: 40px;
+    font-weight: 500;
+    max-width: 360px;
+}
+
+.services-bottom-element p {
+    margin-top: 35px;
+    margin-left: 60px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.services-bottom-1 {
+    background-color: #F9E6D0;
+    border-radius: 60px;
+    position: relative;
+}
+
+.services-bottom-1 p {
+    max-width: 295px;
+}
+
+.services-bottom-1 button {
+    background-color: #f9e5cf;
+    border: 1px solid #00373E;
+}
+
+.services-bottom-1 img {
+    position: absolute;
+    top: 59px;
+    right: 53px;
+}
+
+.services-bottom-2 p {
+    max-width: 312px;
+}
+
+.services-bottom-2 button {
+    background-color: #f7f6f4;
+    border: none;
+}
+
+/* ===================================================
+   Resources
+   =================================================== */
+
+.resources {
+    margin-top: 60px;
+    height: 696px;
+}
+
+.resources-top {
+    text-align: center;
+}
+
+.resources-top h2 {
+    font-weight: 700;
+    margin: 19px auto 0 auto; 
+    max-width: 440px;
+}
+
+.resources-top-p2 {
+    margin: 19px auto 0 auto;
+}
+
+.resources-bottom {
+    margin-top: 76px;
+}
+
+.resources-bottom-element ul {
+    display: flex;
+    justify-content: space-between;
+    height: 384px;
+    gap: 10px;
+}
+
+.resources-bottom-element ul li {
+    width: 387px;
+    text-align: center;
+}
+
+.resources-bottom-element ul li h3 {
+    margin: 57px auto 0 auto;
+    max-width: 230px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.resources-bottom-element ul li p {
+    margin: 19px auto 0 auto;
+    max-width: 307px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.resources-bottom-element ul li button {
+    width: 155px;
+    height: 52px;
+    border-radius: 26px;
+    border: none;
+    margin-top: 57px;
+    cursor: pointer;
+}
+
+.resources-button-yellow { background-color: #eebf22; }
+.resources-button-green  { background-color: #4dcaba; }
+.resources-button-pink   { background-color: #f39baa; }

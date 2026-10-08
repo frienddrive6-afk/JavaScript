@@ -19,16 +19,23 @@
                 <div class="header-element">
                     <ul>
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
                     </ul>
                 </div>
 
                 <div class="header-element">
                     <ul>
                         <li><a href="#">Therapists</a></li>
-                        <li><a href="#">Resources</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#resources">Resources</a></li>
+                        <li class="dropdown">
+                            <a href="#">Drop List ▾</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Option 1</a></li>
+                                <li><a href="#">Option 2</a></li>
+                                <li><a href="#">Option 3</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div> 
@@ -37,10 +44,13 @@
 
     <div class="container">
         
-        <section class="hero">
+        <section id="hero" class="hero">
+
+            <div class="hero-curtain"></div>
+
             <h1>Support for Your Mental Well-being</h1>
             <p>Connect with licensed therapists, counselors, and wellness coaches to support your journey.</p>
-            <button class="btn btn-primary">Get Started</button>
+            <button id = "openBtn" class="btn btn-primary">Get Started</button>
 
             <div class="hero-image">
                 <img src="/img/hero/1.png" alt="hero image">
@@ -48,12 +58,12 @@
             </div>
         </section>
 
-        <section class="about">
+        <section id="about" class="about">
             <div class="about-element">
                 <p class="about-element-p1 section-label">HOW IT WORKS</p>
                 <h2 class="section-title">We Help You Prioritize Your Mental Health</h2>
                 <p class="about-element-p2 section-description">Browse therapists, book a session, and start your healing journey with trusted professionals.</p>
-                <button class="btn btn-primary">Find a Therapist</button>
+                <button class="btn btn-primary"><a href = "/other_sites/MiniGame/MiniGame.html">Find a Therapist</a></button>
             </div>
 
             <div class="about-element">
@@ -63,7 +73,7 @@
             </div>
         </section> 
 
-        <section class="services">
+        <section id="services" class="services">
             <div class="services-top">
                 <p class="services-top-p1 section-label">SERVICES</p>
                 <h2 class="section-title">Your Path to Well-being</h2>
@@ -86,7 +96,7 @@
             </div>
         </section>
 
-        <section class="resources">
+        <section id="resources" class="resources">
             <div class="resources-top">
                 <p class="resources-top-p1 section-label">EXPLORE & LEARN</p>
                 <h2 class="section-title">Resources for Your Well-being</h2>
@@ -119,6 +129,31 @@
         </section>
 
     </div>
+
+
+    <dialog id="customPrompt">
+        <form method="dialog">
+            <h3>Заполните профиль</h3>
+            
+            <label>Ваше имя: 
+            <input type="text" id="username" placeholder="Иван">
+            </label>
+            <br>
+            <label>Возраст: 
+            <input type="number" id="age" min="1" max="100">
+            </label>
+            <br>
+            <label>Любимый цвет: 
+            <input type="color" id="favColor">
+            </label>
+
+            <div class="buttons">
+            <button value="cancel">Отмена</button>
+            <button id="submitBtn" value="default">Сохранить</button>
+            </div>
+        </form>
+    </dialog>
+
     <script src="script.js"></script>
 </body>
 </html>

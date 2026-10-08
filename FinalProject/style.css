@@ -96,6 +96,50 @@ header {
     font-weight: 400;
 }
 
+.dropdown {
+    position: relative;
+    cursor: pointer;
+}
+
+.header-element ul.dropdown-menu {
+    position: absolute;
+    top: 100%;             
+    right: -50px;              
+    display: none;         
+    
+    background-color: #ffffff;
+    min-width: 170px;
+    padding: 12px 0;
+    margin: 0;
+    
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+
+    flex-direction: column !important; 
+    gap: 0 !important;
+}
+
+.dropdown-menu li {
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 20px;
+    color: #00373E;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #F9E6D0; 
+}
+
+.dropdown:hover ul.dropdown-menu {
+    display: flex;
+}
+
 /* ===================================================
    Hero
    =================================================== */
@@ -103,12 +147,32 @@ header {
 .hero {
     margin-top: 161px;
     height: 668px;
-    background-color: #F9E6D0;
+    background-color: #F9E6D0; 
     border-radius: 70px;
     text-align: center;
     position: relative;
-    overflow: hidden;
+    overflow: hidden; 
 }
+
+.hero-curtain {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #F39BAA;
+    pointer-events: none; 
+    z-index: 0;           
+
+    box-shadow: -60px 0 60px 0 #F39BAA;
+
+    transform: translateX(115%);
+
+    transition: transform 7s ease-in-out;
+}
+
+
+
 
 .hero h1 {
     padding-top: 170px;
@@ -116,6 +180,9 @@ header {
     max-width: 640px;
     font-weight: 700;
     margin: 0 auto;
+
+    position: relative;
+    z-index: 1;
 }
 
 .hero p {
@@ -124,6 +191,9 @@ header {
     max-width: 564px;
     font-weight: 400;
     margin: 0 auto;
+
+    position: relative;
+    z-index: 1;
 }
 
 .hero button {
@@ -131,6 +201,9 @@ header {
     width: 195px;
     font-size: 15px;
     line-height: 20px;
+
+    position: relative;
+    z-index: 1;
 }
 
 .hero-image {
@@ -143,6 +216,7 @@ header {
     justify-content: space-between;
     align-items: flex-end; 
     pointer-events: none;  
+    
 }
 
 /* ===================================================
@@ -184,11 +258,15 @@ header {
     justify-content: center;
     align-items: center;
     border-radius: 60px;
+    
+    user-select: none;
 }
 
 .cry-wooman img {
     width: 350px;
     height: 416px;
+
+    user-select: none;
 }
 
 /* ===================================================

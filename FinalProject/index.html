@@ -13,6 +13,11 @@
 </head>
 
 <body>
+
+    <canvas id="canvas-left" class="side-canvas"></canvas>
+    <canvas id="canvas-right" class="side-canvas"></canvas>
+
+
     <header>
         <div class="container">
             <div class="header-menu">           
@@ -26,7 +31,7 @@
 
                 <div class="header-element">
                     <ul>
-                        <li><a href="#">Therapists</a></li>
+                        <li><a href="/other_sites/MiniGame/MiniGame.html">Therapists</a></li>
                         <li><a href="#resources">Resources</a></li>
                         <li class="dropdown">
                             <a href="#">Drop List ▾</a>
@@ -131,29 +136,35 @@
     </div>
 
 
-    <dialog id="customPrompt">
+    <dialog id="customPrompt" style="border: none; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); padding: 24px; font-family: 'Bricolage Grotesque', sans-serif; background-color: #ffffff; width: 280px;">
         <form method="dialog">
-            <h3>Заполните профиль</h3>
+            <h3 style="margin: 0 0 20px 0; text-align: center; font-size: 20px; font-weight: 700; color: #00373E;">Заполните профиль</h3>
             
-            <label>Ваше имя: 
-            <input type="text" id="username" placeholder="Иван">
-            </label>
-            <br>
-            <label>Возраст: 
-            <input type="number" id="age" min="1" max="100">
-            </label>
-            <br>
-            <label>Любимый цвет: 
-            <input type="color" id="favColor">
-            </label>
+            <div style="display: flex; align-items: center; margin-bottom: 14px;">
+                <label for="username" style="width: 120px; font-size: 15px; font-weight: 500; color: #00373E; flex-shrink: 0;">Ваше имя:</label>
+                <input type="text" id="username" placeholder="Иван" style="flex-grow: 1; width: 100%; padding: 8px 12px; border: 1px solid #ced4da; border-radius: 6px; font-size: 14px; outline: none;">
+            </div>
+            
+            <div style="display: flex; align-items: center; margin-bottom: 14px;">
+                <label for="age" style="width: 120px; font-size: 15px; font-weight: 500; color: #00373E; flex-shrink: 0;">Возраст:</label>
+                <input type="number" id="age" min="1" max="100" style="flex-grow: 1; width: 100%; padding: 8px 12px; border: 1px solid #ced4da; border-radius: 6px; font-size: 14px; outline: none;">
+            </div>
+            
+            <div style="display: flex; align-items: center; margin-bottom: 24px;">
+                <label for="favColor" style="width: 120px; font-size: 15px; font-weight: 500; color: #00373E; flex-shrink: 0;">Любимый цвет:</label>
+                <input type="color" id="favColor" value="#00373E" style="width: 45px; height: 32px; border: 1px solid #ced4da; border-radius: 6px; padding: 2px; cursor: pointer; background: none;">
+            </div>
 
-            <div class="buttons">
-            <button value="cancel">Отмена</button>
-            <button id="submitBtn" value="default">Сохранить</button>
+            <div class="buttons" style="display: flex; gap: 10px;">
+                <button value="cancel" style="flex: 1; padding: 10px; border: none; border-radius: 6px; font-size: 14px; font-weight: 600; background-color: #f1f3f5; color: #495057; cursor: pointer;">Отмена</button>
+                <button id="submitBtn" value="default" style="flex: 1; padding: 10px; border: none; border-radius: 6px; font-size: 14px; font-weight: 600; background-color: #00373E; color: #ffffff; cursor: pointer;">Сохранить</button>
             </div>
         </form>
     </dialog>
 
+
+
     <script src="script.js"></script>
+    <script src="ParticleFall.js"></script>
 </body>
 </html>

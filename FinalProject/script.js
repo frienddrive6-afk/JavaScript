@@ -64,7 +64,7 @@ cryWoman.addEventListener('click', function () {
 //end    
 //=======================================================
 
-// кнопка открытия диалога с профилем и закрытие модального окна при клике в пустое место
+// кнопка открытие диалога для заполнения профиля
 const dialog = document.getElementById('customPrompt');
 const openBtn = document.getElementById('openBtn');
 
@@ -121,7 +121,60 @@ setInterval(runCurtainAnimation, 15000);
 
 
 
+// добавление карточки в ресурсы
+const addCardBtn = document.getElementById("resources-add-card-btn");
+const createCardDialog = document.getElementById("createCard");
+const addCardSubmitbtn = document.getElementById("btn-submit");
+const resourcesList = document.querySelector(".resources-bottom-element ul");
 
+
+addCardBtn.addEventListener('click', () => 
+{
+    createCardDialog.showModal();
+});
+
+
+
+addCardSubmitbtn.addEventListener('click', () =>
+{
+    const titleInput = document.getElementById("input-title");
+    const textInput = document.getElementById("input-text");
+    const btnColorInput = document.getElementById("input-btn-color");
+
+
+    const title = titleInput.value;
+    const text = textInput.value;
+    const btnColor = btnColorInput.value;
+    // console.log(title, text, btnColor);
+
+    if(title.length === 0 || text.length === 0)
+    {
+        alert("Заполните все поля!");
+        return;
+    }
+
+    const newCardHTML = `
+        <li>
+            <h3>${title}</h3>
+            <p>${text}</p>
+            <button style="background-color: ${btnColor};">Explore</button>
+        </li>
+    `;
+
+
+    resourcesList.insertAdjacentHTML('beforeend',newCardHTML);
+
+    titleInput.value = '';
+    textInput.value = '';
+    btnColorInput.value = '#00373E';
+
+    createCardDialog.close();
+
+});
+
+//=======================================================
+//end
+//=======================================================
 
 
 

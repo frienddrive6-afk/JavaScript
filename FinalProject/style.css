@@ -377,7 +377,8 @@ header {
 
 .resources {
     margin-top: 60px;
-    height: 696px;
+    /* height: 696px; */
+    position: relative;
 }
 
 .resources-top {
@@ -400,16 +401,19 @@ header {
 
 .resources-bottom-element ul {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     height: 384px;
-    gap: 10px;
+    gap: 20px;
 }
 
 .resources-bottom-element ul li {
-    width: 387px;
+    width: calc((100% - 40px) / 3);
+    min-height: 384px;
     text-align: center;
     background-color: #e2e2e2;
     border-radius: 25px;
+    box-sizing: border-box;
 }
 
 .resources-bottom-element ul li h3 {
@@ -435,6 +439,9 @@ header {
     cursor: pointer;
 }
 
-.resources-button-yellow { background-color: #eebf22; }
-.resources-button-green  { background-color: #4dcaba; }
-.resources-button-pink   { background-color: #f39baa; }
+.resources-add-card
+{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}

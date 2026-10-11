@@ -58,6 +58,18 @@ cryWoman.addEventListener('click', function () {
 
     cryWoman.style.backgroundColor = newColor;
     aboutButton.style.backgroundColor = newColor;
+    
+    const curtain = document.querySelector('.hero-curtain');
+    if (curtain) {
+        curtain.style.backgroundColor = newColor;
+        curtain.style.boxShadow = `-60px 0 60px 40px ${newColor}`;
+    }
+});
+
+cryWoman.addEventListener('dblclick', function () 
+{
+    curtain.style.backgroundColor = '#F39BAA';
+    curtain.style.boxShadow = `-60px 0 60px 40px #F39BAA`;
 });
 
 //=======================================================
@@ -67,6 +79,10 @@ cryWoman.addEventListener('click', function () {
 // кнопка открытие диалога для заполнения профиля
 const dialog = document.getElementById('customPrompt');
 const openBtn = document.getElementById('openBtn');
+
+const headerUser = document.getElementById('headerUser');
+const headerAge = document.getElementById('headerAge');
+const headerColor = document.getElementById('headerColor');
 
 openBtn.addEventListener('click', () => {
     dialog.showModal(); 
@@ -78,7 +94,29 @@ dialog.addEventListener('close', () => {
         const age = document.getElementById('age').value;
         const color = document.getElementById('favColor').value;
         
-        console.log(`${name},${age},${color}`);
+        // console.log(`${name},${age},${color}`);
+
+        if(name.length === 0 || age.length === 0)
+        {
+            headerUser.innerHTML = 'User';
+            headerAge.innerHTML = '0+';
+            headerColor.style.backgroundColor = '#00373E';
+        }else
+        { 
+            headerUser.innerHTML = name;
+            headerAge.innerHTML = age;
+            headerColor.style.backgroundColor = color;
+
+            localStorage.setItem('name', name);
+            localStorage.setItem('age', age);
+            localStorage.setItem('color', color);
+
+            document.getElementById('username').value = '';
+            document.getElementById('age').value = '';
+            document.getElementById('favColor').value = '#00373E';
+        }
+
+
     }
 });
 
@@ -97,6 +135,17 @@ dialog.addEventListener('click', (event) => {
         dialog.close('cancel'); 
     }
 });
+
+
+const savedName = localStorage.getItem('name');
+const savedAge = localStorage.getItem('age');
+const savedColor = localStorage.getItem('color');
+
+if (savedName !== null && savedAge !== null && savedColor !== null) {
+    headerUser.textContent = savedName;
+    headerAge.textContent = savedAge;
+    headerColor.style.backgroundColor = savedColor;
+}
 //=======================================================
 //end
 //=======================================================

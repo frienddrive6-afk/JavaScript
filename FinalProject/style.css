@@ -164,6 +164,36 @@ header {
     display: flex;
 }
 
+
+.header-login
+{
+    width: 80px;
+    height: 100%;
+    text-align: center;
+    font-size: 14px;
+    line-height: 15px;
+    border-right: 1px solid #cdcdcc;
+    border-left: 1px solid #cdcdcc;
+}
+
+.header-login
+{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 10px;
+}
+
+.header-login-color
+{
+    /* margin: 5px auto 0px auto; */
+    background-color: #00373E;
+    width: 30px;
+    height: 30px;
+    border: black 1px;
+}
+
+
+
 /* ===================================================
    Hero
    =================================================== */
@@ -188,7 +218,7 @@ header {
     pointer-events: none; 
     z-index: 0;           
 
-    box-shadow: -60px 0 60px 0 #F39BAA;
+    box-shadow: -60px 0 60px 40px #F39BAA;
 
     transform: translateX(115%);
 

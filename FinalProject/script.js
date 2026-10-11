@@ -176,6 +176,48 @@ const createCardDialog = document.getElementById("createCard");
 const addCardSubmitbtn = document.getElementById("btn-submit");
 const resourcesList = document.querySelector(".resources-bottom-element ul");
 
+let cardIdCounter = 1;
+
+let cardsArray = [
+    {
+        id: cardIdCounter++,
+        title: "Articles & Guides",
+        text: "Practical tips on stress management, mindfulness, and emotional resilience.",
+        btnColor: "#eebf22"
+    },
+    {
+        id: cardIdCounter++,
+        title: "Meditation & Relaxation",
+        text: "Audio sessions for guided meditation and deep breathing exercises.",
+        btnColor: "#4dcaba"
+    },
+    {
+        id: cardIdCounter++,
+        title: "Webinars & Workshops",
+        text: "Live and recorded sessions with mental health professionals.",
+        btnColor: "#f39baa"
+    }
+];
+
+
+function renderCards() {
+    resourcesList.innerHTML = '';
+
+    for (const card of cardsArray) {
+        const cardHTML = `
+            <li data-id="${card.id}">
+                <button class="resources-bottom-close-btn">✕</button>
+                <h3>${card.title}</h3>
+                <p>${card.text}</p>
+                <button class="resources-bottom-element-btn-Explore" style="background-color: ${card.btnColor};">Explore</button>
+            </li>
+        `;
+        resourcesList.insertAdjacentHTML('beforeend', cardHTML);
+    }
+}
+
+renderCards();
+
 
 addCardBtn.addEventListener('click', () => 
 {
@@ -184,42 +226,65 @@ addCardBtn.addEventListener('click', () =>
 
 
 
-addCardSubmitbtn.addEventListener('click', () =>
-{
+addCardSubmitbtn.addEventListener('click', () => {
     const titleInput = document.getElementById("input-title");
     const textInput = document.getElementById("input-text");
     const btnColorInput = document.getElementById("input-btn-color");
 
-
-    const title = titleInput.value;
-    const text = textInput.value;
+    const title = titleInput.value.trim();
+    const text = textInput.value.trim();
     const btnColor = btnColorInput.value;
-    // console.log(title, text, btnColor);
 
-    if(title.length === 0 || text.length === 0)
-    {
+    if (title.length === 0 || text.length === 0) {
         alert("Заполните все поля!");
         return;
     }
 
-    const newCardHTML = `
-        <li>
-            <h3>${title}</h3>
-            <p>${text}</p>
-            <button style="background-color: ${btnColor};">Explore</button>
-        </li>
-    `;
+    cardsArray.push({
+        id: cardIdCounter++,
+        title: title,
+        text: text,
+        btnColor: btnColor
+    });
 
-
-    resourcesList.insertAdjacentHTML('beforeend',newCardHTML);
+    renderCards();
 
     titleInput.value = '';
     textInput.value = '';
     btnColorInput.value = '#00373E';
-
     createCardDialog.close();
-
 });
+
+
+resourcesList.addEventListener('click', (event) => {
+    if (event.target.classList.contains('resources-bottom-close-btn')) {
+        const cardLi = event.target.closest('li');
+        
+        const idToDelete = Number(cardLi.dataset.id);
+
+        cardsArray = cardsArray.filter(card => card.id !== idToDelete);
+
+        renderCards();
+
+        // console.log("Осталось карточек в памяти:", cardsArray.length);
+    }
+});
+
+createCardDialog.addEventListener('click', (event) => {
+    const rect = createCardDialog.getBoundingClientRect();
+    const clickedOutside = 
+        event.clientX < rect.left ||
+        event.clientX > rect.right ||
+        event.clientY < rect.top ||
+        event.clientY > rect.bottom;
+
+    if (clickedOutside) {
+        createCardDialog.close('cancel');
+    }
+});
+
+
+
 
 //=======================================================
 //end

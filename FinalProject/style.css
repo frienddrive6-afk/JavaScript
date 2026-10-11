@@ -444,6 +444,8 @@ header {
     background-color: #e2e2e2;
     border-radius: 25px;
     box-sizing: border-box;
+
+    position: relative;
 }
 
 .resources-bottom-element ul li h3 {
@@ -460,7 +462,8 @@ header {
     font-weight: 400;
 }
 
-.resources-bottom-element ul li button {
+/* .resources-bottom-element ul li button { */
+.resources-bottom-element-btn-Explore {
     width: 155px;
     height: 52px;
     border-radius: 26px;
@@ -474,4 +477,36 @@ header {
     position: absolute;
     top: 20px;
     right: 20px;
+}
+
+
+.resources-bottom-close-btn {
+    visibility: hidden;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: #495057;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+
+.resources-bottom-close-btn:hover {
+    background-color: #FF6B6B; 
+    color: #ffffff;            
+    transform: scale(1.1);     
+}
+
+.resources-bottom-element ul li:hover .resources-bottom-close-btn {
+    visibility: visible;
 }
